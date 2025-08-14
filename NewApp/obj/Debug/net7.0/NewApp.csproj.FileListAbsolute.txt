@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\bin\Debug\net7.0\NewApp.exe
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\bin\Debug\net7.0\NewApp.deps.json
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\bin\Debug\net7.0\NewApp.runtimeconfig.json
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\bin\Debug\net7.0\NewApp.dll
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\bin\Debug\net7.0\NewApp.pdb
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\NewApp.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\NewApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\NewApp.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\NewApp.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\NewApp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\NewApp.dll
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\refint\NewApp.dll
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\NewApp.pdb
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\NewApp.genruntimeconfig.cache
+C:\Users\Admin\Desktop\Net_Core_API\NewApp\obj\Debug\net7.0\ref\NewApp.dll
