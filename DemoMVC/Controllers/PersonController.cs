@@ -1,3 +1,5 @@
+using System.Net;
+using System.Data;
 namespace DemoMVC.Controllers
 {
 
@@ -7,13 +9,17 @@ namespace DemoMVC.Controllers
     {
         public IActionResult Index()
         {
+             ViewData["Message"] = "Your welcome message";
+            @ViewBag.Message = "Hello";
+
             return View();
         }
 
-        public IActionResult Welcome()
+        
+        [HttpPost]
+        public IActionResult Index(string fullname)
         {
-            ViewData["Message"] = "Your welcome message";
-
+            ViewBag.Message = $"Hello, {fullname}";
             return View();
         }
     }

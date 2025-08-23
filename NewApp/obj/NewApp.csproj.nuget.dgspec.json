@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\Net_Core_API\\NewApp\\NewApp.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\NetMVC\\NewApp\\NewApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\Net_Core_API\\NewApp\\NewApp.csproj": {
+    "C:\\Users\\Admin\\Desktop\\NetMVC\\NewApp\\NewApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Net_Core_API\\NewApp\\NewApp.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\NetMVC\\NewApp\\NewApp.csproj",
         "projectName": "NewApp",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Net_Core_API\\NewApp\\NewApp.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\NetMVC\\NewApp\\NewApp.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Net_Core_API\\NewApp\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\NetMVC\\NewApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
