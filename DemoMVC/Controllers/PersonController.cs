@@ -9,8 +9,7 @@ namespace DemoMVC.Controllers
     {
         public IActionResult Index()
         {
-             ViewData["Message"] = "Your welcome message";
-            @ViewBag.Message = "Hello";
+            ViewBag.Message = "Hello";
 
             return View();
         }
