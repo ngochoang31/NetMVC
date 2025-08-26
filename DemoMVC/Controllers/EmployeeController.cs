@@ -1,16 +1,22 @@
+using Microsoft.AspNetCore.Mvc;
+using DemoMVC.Models;   
+
 namespace DemoMVC.Controllers
 {
-
-    using Microsoft.AspNetCore.Mvc;
-
     public class EmployeeController : Controller
     {
+    
         public IActionResult Index()
         {
-            ViewBag.Message = "Hello";
             return View();
         }
 
-
+        [HttpPost]
+        public IActionResult Index(Employee ps)
+        {
+            string strOutput = "Xin chào " + ps.EmployeeId + " - " + ps.Age;
+            ViewBag.Message = strOutput;
+            return View();
+        }
     }
 }

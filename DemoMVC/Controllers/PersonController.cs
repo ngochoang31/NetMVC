@@ -1,5 +1,6 @@
 using System.Net;
 using System.Data;
+using DemoMVC.Models;
 namespace DemoMVC.Controllers
 {
 
@@ -9,16 +10,15 @@ namespace DemoMVC.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.Message = "Hello";
-
             return View();
         }
 
         
         [HttpPost]
-        public IActionResult Index(string fullname)
+        public IActionResult Index(Person ps)
         {
-            ViewBag.Message = $"Hello, {fullname}";
+            string strOutput = "Xin chao" + ps.PersonId + "-" + ps.FullName + "-" + ps.Address;
+            ViewBag.infoPerson = strOutput;
             return View();
         }
     }
