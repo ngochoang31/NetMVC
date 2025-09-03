@@ -9,14 +9,14 @@ namespace DemoMVC.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.Message = "...";
+            ViewBag.Message = "Hello";
             return View();
         }
 
         [HttpPost]
         public IActionResult Index(Bai1 ps)
         {
-            ViewBag.Message = "" + ps.FullName + "-" + ps.Age;
+            ViewBag.Message = " " + ps.YearOfBirth + " " + ps.FullName + " " + ps.Age;
             return View();
         }
 
