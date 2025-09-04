@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using DemoMVC.Models;
 namespace DemoMVC.Controllers
 {
@@ -6,19 +7,21 @@ namespace DemoMVC.Controllers
 
     public class Bai2Controller : Controller
     {
+        
         public IActionResult Index()
         {
-            ViewBag.Result = "";
+            ViewBag.Result = "May Tinh Co Ban";
             return View();
         }
 
         [HttpPost]
         public IActionResult Index(Bai2 ps)
         {
-            ViewBag.Result = "Ket qua: " + " " + ps.Result;
+            ViewBag.Result = "Ket qua:" + " " + ps.Result;
             return View();
         }
 
-       
+
     }
+  
 }
