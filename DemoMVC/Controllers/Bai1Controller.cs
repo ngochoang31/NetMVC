@@ -16,7 +16,7 @@ namespace DemoMVC.Controllers
         [HttpPost]
         public IActionResult Index(Bai1 ps)
         {
-            ViewBag.Message = " " + ps.YearOfBirth + " " + ps.FullName + " " + ps.Age;
+            ViewBag.Message = " " + ps.FullName + " " + ps.Age;
             return View();
         }
 
