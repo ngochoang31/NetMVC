@@ -2,9 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using DemoMVC.Models;
 namespace DemoMVC.Controllers
 {
-
-    using Microsoft.AspNetCore.Mvc;
-
     public class Bai2Controller : Controller
     {
         
