@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "vNFS0kCwvXWAQ1gmEZmtmIToIqxgn3j0+sPtOa7hN0aLmwHeR8buDwgMtcWXpW8TKUnfzg/BmISspwhwyxiAKg==",
+  "dgSpecHash": "IM4mP6dEuk4=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\NetMVC\\NewApp\\NewApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\7.0.20\\microsoft.netcore.app.host.win-x86.7.0.20.nupkg.sha512"
+  ],
   "logs": []
 }
