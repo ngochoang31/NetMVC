@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DemoMVC.Models;
 
-public class DemoMVC
+public class Demo
 {
     public int Id { get; set; }
     public string? Title { get; set; }
