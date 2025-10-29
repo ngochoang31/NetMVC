@@ -1,13 +1,14 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DemoMVC.Models;
-
-public class Demo
+namespace DemoMVC.Models
 {
-    public int Id { get; set; }
-    public string? Title { get; set; }
-    public DateTime ReleaseData { get; set; }
-    public string? Genre { get; set; }
-    public decimal Price { get; set; }
-
+    [Table("Demo")]
+    public class Demo
+    {
+        [Key]
+        public int Id { get; set; }
+        public string FullName { get; set; }
+        public int Age { get; set; }
+    }
 }
