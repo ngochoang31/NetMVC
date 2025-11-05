@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DemoMVC.Data;
 using DemoMVC.Models;
+using DemoMVC.Models.Process;
 
 namespace DemoMVC.Controllers
 {
     public class StudentController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private GenCode gen = new GenCode(); // sinh mã tự động
 
         public StudentController(ApplicationDbContext context)
         {
@@ -46,18 +48,40 @@ namespace DemoMVC.Controllers
         // GET: Student/Create
         public IActionResult Create()
         {
+            // Lấy bản ghi cuối cùng (nếu có)
+            var lastStudent = _context.Student
+                .OrderByDescending(s => s.Id)
+                .FirstOrDefault();
+
+            string lastCode = lastStudent?.StudentCode ?? "";
+
+            // Sinh mã mới
+            string newCode = gen.AutoGenCode(lastCode);
+
+            // Truyền sang View để hiển thị
+            ViewBag.NewCode = newCode;
+
             return View();
         }
 
-        // POST: Student/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //  POST: Student/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FullName,Age,DemoCode")] Student student)
+        public async Task<IActionResult> Create([Bind("Id,FullName,Age,StudentCode")] Student student)
         {
             if (ModelState.IsValid)
             {
+                // Nếu mã chưa có (trường hợp người dùng không nhập)
+                if (string.IsNullOrEmpty(student.StudentCode))
+                {
+                    var lastStudent = await _context.Student
+                        .OrderByDescending(s => s.Id)
+                        .FirstOrDefaultAsync();
+
+                    string lastCode = lastStudent?.StudentCode ?? "";
+                    student.StudentCode = gen.AutoGenCode(lastCode);
+                }
+
                 _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -82,11 +106,9 @@ namespace DemoMVC.Controllers
         }
 
         // POST: Student/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Age,DemoCode")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Age,StudentCode")] Student student)
         {
             if (id != student.Id)
             {

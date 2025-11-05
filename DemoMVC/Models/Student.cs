@@ -10,7 +10,7 @@ namespace DemoMVC.Models
         public int Id { get; set; }
         public string FullName { get; set; }
         public int Age { get; set; }
-        public string DemoCode { get; set; } //sinh ma tu dong
+        public string StudentCode { get; set; } //sinh ma tu dong
         
     }
 }
