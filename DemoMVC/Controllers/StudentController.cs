@@ -8,26 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using DemoMVC.Data;
 using DemoMVC.Models;
 
-
 namespace DemoMVC.Controllers
 {
-    public class DemoController : Controller
+    public class StudentController : Controller
     {
         private readonly ApplicationDbContext _context;
-        
 
-        public DemoController(ApplicationDbContext context)
+        public StudentController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Demo
+        // GET: Student
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Demo.ToListAsync());
+            return View(await _context.Student.ToListAsync());
         }
 
-        // GET: Demo/Details/5
+        // GET: Student/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,38 +33,39 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var demo = await _context.Demo
+            var student = await _context.Student
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (demo == null)
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(demo);
+            return View(student);
         }
 
-        // GET: Demo/Create
+        // GET: Student/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Demo/Create
+        // POST: Student/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FullName,Age,Democode")] Demo demo)
+        public async Task<IActionResult> Create([Bind("Id,FullName,Age,DemoCode")] Student student)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(demo);
+                _context.Add(student);
                 await _context.SaveChangesAsync();
-
                 return RedirectToAction(nameof(Index));
             }
-            return View(demo);
+            return View(student);
         }
 
-        // GET: Demo/Edit/5
+        // GET: Student/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,20 +73,22 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var demo = await _context.Demo.FindAsync(id);
-            if (demo == null)
+            var student = await _context.Student.FindAsync(id);
+            if (student == null)
             {
                 return NotFound();
             }
-            return View(demo);
+            return View(student);
         }
 
-        // POST: Demo/Edit/5
+        // POST: Student/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Age,Democode")] Demo demo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Age,DemoCode")] Student student)
         {
-            if (id != demo.Id)
+            if (id != student.Id)
             {
                 return NotFound();
             }
@@ -96,12 +97,12 @@ namespace DemoMVC.Controllers
             {
                 try
                 {
-                    _context.Update(demo);
+                    _context.Update(student);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DemoExists(demo.Id))
+                    if (!StudentExists(student.Id))
                     {
                         return NotFound();
                     }
@@ -112,10 +113,10 @@ namespace DemoMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(demo);
+            return View(student);
         }
 
-        // GET: Demo/Delete/5
+        // GET: Student/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,34 +124,34 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var demo = await _context.Demo
+            var student = await _context.Student
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (demo == null)
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(demo);
+            return View(student);
         }
 
-        // POST: Demo/Delete/5
+        // POST: Student/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var demo = await _context.Demo.FindAsync(id);
-            if (demo != null)
+            var student = await _context.Student.FindAsync(id);
+            if (student != null)
             {
-                _context.Demo.Remove(demo);
+                _context.Student.Remove(student);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DemoExists(int id)
+        private bool StudentExists(int id)
         {
-            return _context.Demo.Any(e => e.Id == id);
+            return _context.Student.Any(e => e.Id == id);
         }
     }
 }

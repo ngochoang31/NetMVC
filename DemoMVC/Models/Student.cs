@@ -3,13 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DemoMVC.Models
 {
-    [Table("Demo")]
-    public class Demo
+    [Table("Student")]
+    public class Student
     {
         [Key]
         public int Id { get; set; }
         public string FullName { get; set; }
         public int Age { get; set; }
+        public string DemoCode { get; set; } //sinh ma tu dong
         
     }
 }
